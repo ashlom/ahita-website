@@ -1,0 +1,12 @@
+# Python scripts
+*.py
+
+# Instaloader JSON files
+*.json
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

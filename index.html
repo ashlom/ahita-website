@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahitá Cerámica | Objetos con alma de barro</title>
+    <meta name="description" content="Taller de cerámica artesanal en Córdoba, Argentina. Objetos únicos hechos a mano con diseño orgánico y cálido.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: '#E07A5F',
+                        sand: '#F4F1DE',
+                        drygreen: '#81B29A',
+                        charcoal: '#3D405B',
+                        stone: '#2F2F2F',
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'serif'],
+                        sans: ['Lato', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar for a more polished look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4F1DE;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E07A5F;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C86B52;
+        }
+    </style>
+</head>
+<body class="bg-sand text-stone font-sans antialiased selection:bg-terracotta selection:text-white">
+
+    <!-- Navigation -->
+    <header class="fixed w-full bg-sand/95 backdrop-blur-sm z-50 transition-all duration-300 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif font-bold text-terracotta tracking-wider hover:text-charcoal transition-colors">
+                Ahitá Cerámica
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-stone focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-stone hover:text-terracotta transition-colors text-sm uppercase tracking-widest font-bold">Inicio</a>
+                <a href="#taller" class="text-stone hover:text-terracotta transition-colors text-sm uppercase tracking-widest font-bold">Taller</a>
+                <a href="#galeria" class="text-stone hover:text-terracotta transition-colors text-sm uppercase tracking-widest font-bold">Galería</a>
+                <a href="#contacto" class="text-stone hover:text-terracotta transition-colors text-sm uppercase tracking-widest font-bold">Contacto</a>
+            </nav>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-sand shadow-lg border-t border-gray-200">
+            <div class="flex flex-col items-center py-6 space-y-4">
+                <a href="#inicio" class="text-stone hover:text-terracotta text-lg uppercase tracking-widest" onclick="toggleMenu()">Inicio</a>
+                <a href="#taller" class="text-stone hover:text-terracotta text-lg uppercase tracking-widest" onclick="toggleMenu()">Taller</a>
+                <a href="#galeria" class="text-stone hover:text-terracotta text-lg uppercase tracking-widest" onclick="toggleMenu()">Galería</a>
+                <a href="#contacto" class="text-stone hover:text-terracotta text-lg uppercase tracking-widest" onclick="toggleMenu()">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Using a representative image for background, darkened for text readability -->
+            <img src="ahita.ceramica/2025-10-09_16-32-04_UTC_1.jpg" alt="Taller de cerámica" class="w-full h-full object-cover opacity-90">
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto animate-slide-up">
+            <h1 class="font-serif text-5xl md:text-7xl text-sand mb-6 font-bold leading-tight drop-shadow-lg">
+                Objetos con <br/><span class="text-terracotta italic">alma de barro</span>
+            </h1>
+            <p class="text-lg md:text-xl text-sand/90 mb-10 font-light tracking-wide max-w-2xl mx-auto">
+                Piezas únicas hechas a mano en Córdoba, inspiradas en la naturaleza y lo cotidiano.
+            </p>
+            <a href="#galeria" class="inline-block bg-terracotta text-white px-8 py-4 rounded-full text-sm uppercase tracking-widest font-bold hover:bg-white hover:text-terracotta transition-all duration-300 transform hover:-translate-y-1 shadow-lg border-2 border-transparent hover:border-terracotta">
+                Ver Colección
+            </a>
+        </div>
+    </section>
+
+    <!-- Quienes Somos / About Section -->
+    <section id="taller" class="py-24 px-6 bg-sand">
+        <div class="container mx-auto max-w-5xl">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-full h-full border-2 border-terracotta rounded-lg z-0"></div>
+                    <img src="ahita.ceramica/2025-10-09_16-32-04_UTC_2.jpg" alt="Proceso de creación" class="relative z-10 rounded-lg shadow-xl w-full object-cover aspect-[4/5] grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h2 class="font-serif text-4xl text-terracotta mb-8 relative inline-block">
+                        El Taller
+                        <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-drygreen"></span>
+                    </h2>
+                    <p class="text-stone text-lg leading-relaxed font-light mb-6">
+                        Ahitá es más que cerámica; es una expresión de nuestra tierra. El nombre juega con nuestra tonada cordobesa ("Ahí está"), reflejando la simplicidad y la alegría de encontrar la belleza en lo cotidiano.
+                    </p>
+                    <p class="text-stone text-lg leading-relaxed font-light">
+                        En nuestro taller, cada pieza se modela a mano, respetando los tiempos del barro y el fuego, creando objetos que cuentan historias.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl text-charcoal mb-4">Nuestra Galería</h2>
+                <div class="w-24 h-1 bg-terracotta mx-auto"></div>
+                <p class="mt-4 text-stone/60 uppercase tracking-widest text-sm">Fragmentos de nuestro mundo</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[300px]">
+                <!-- Gallery Item 1 -->
+                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
+                    <img src="ahita.ceramica/2025-10-07_14-54-43_UTC_1.jpg" alt="Pieza de cerámica 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-serif italic text-xl">Detalles</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-lg cursor-pointer lg:col-span-2">
+                    <img src="ahita.ceramica/2025-07-19_21-27-14_UTC_1.jpg" alt="Pieza de cerámica 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-serif italic text-xl">Texturas</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
+                    <img src="ahita.ceramica/2025-09-26_23-15-25_UTC_1.jpg" alt="Pieza de cerámica 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-serif italic text-xl">Formas</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
+                    <img src="ahita.ceramica/2025-07-12_00-10-26_UTC_1.jpg" alt="Pieza de cerámica 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-serif italic text-xl">Colores</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
+                    <img src="ahita.ceramica/2025-09-26_23-27-39_UTC.jpg" alt="Pieza de cerámica 5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-serif italic text-xl">Artesanal</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="group relative overflow-hidden rounded-lg cursor-pointer lg:col-span-2">
+                    <img src="ahita.ceramica/2025-09-26_23-23-27_UTC.jpg" alt="Pieza de cerámica 6" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-serif italic text-xl">Hogar</span>
+                    </div>
+                </div>
+                 <!-- Gallery Item 7 -->
+                 <div class="group relative overflow-hidden rounded-lg cursor-pointer">
+                    <img src="ahita.ceramica/2025-10-01_17-12-25_UTC.jpg" alt="Pieza de cerámica 7" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-serif italic text-xl">Calidez</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://www.instagram.com/ahita.ceramica" target="_blank" class="inline-flex items-center gap-2 text-terracotta hover:text-charcoal font-bold tracking-widest uppercase text-sm transition-colors border-b-2 border-terracotta pb-1">
+                    <span>Ver más en Instagram</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contacto" class="bg-charcoal text-sand py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+                
+                <!-- Brand -->
+                <div class="flex flex-col items-center md:items-start">
+                    <h3 class="font-serif text-3xl font-bold mb-4 text-terracotta">Ahitá Cerámica</h3>
+                    <p class="text-sand/70 mb-6 font-light">Objetos únicos para acompañar tus rituales diarios.</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/ahita.ceramica" target="_blank" class="p-2 bg-white/10 rounded-full hover:bg-terracotta transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <!-- WhatsApp Placeholder -->
+                        <a href="https://wa.me/5493510000000" target="_blank" class="p-2 bg-white/10 rounded-full hover:bg-drygreen transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="flex flex-col items-center md:items-end md:col-start-3">
+                    <h4 class="font-bold text-lg mb-6 tracking-widest uppercase">Ubicación</h4>
+                    <p class="text-sand/80 font-light flex items-center gap-2 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-terracotta"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Córdoba, Argentina
+                    </p>
+                    <p class="text-sand/60 text-sm mt-4">
+                        &copy; 2025 Ahitá Cerámica. Todos los derechos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Script for Mobile Menu -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <!-- Floating Instagram Message -->
+    <a href="https://ig.me/m/ahita.ceramica" target="_blank" class="fixed right-6 bottom-6 z-50 bg-terracotta text-white p-3 rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300" title="Enviar mensaje por Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </a>
+</body>
+</html>
